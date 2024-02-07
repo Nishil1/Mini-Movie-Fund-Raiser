@@ -12,23 +12,6 @@ def num_check(question):
 
 
 
-# Checks user has entered yes / no to a question
-def yes_no(question):
-
-    while True:
-        response = input(question).lower()
-
-        if response == "yes" or response == "y":
-            return "yes"
-
-        elif response == "no" or response == "n":
-            return "no"
-
-        else:
-            print("Please enter yes or no")
-
-
-
 # Calculates the ticket price based on the age
 def calculate_ticket_price(var_age):
 
