@@ -86,9 +86,12 @@ def string_checker(question, short_version, valid_response):
 max_tickets = 3
 tickets_sold = 0
 
+yes_no_list = ["yes", "no"]
+payment_list = ["cash", "credit"]
+
 
 # Ask user if they want to see the instructions
-want_instructions = yes_no("Do you want to read the instructions? ")
+want_instructions = string_checker("Do you want to read the instructions? ", 1, yes_no_list)
 
 if want_instructions == "yes" or want_instructions == "y":
     print("Show instructions")
@@ -120,8 +123,10 @@ while tickets_sold < max_tickets:
 
     ticket_cost = calculate_ticket_price(age)
 
-    yes_no_list = ["yes", "no"]
-    payment_list = ["cash", "credit"]
+    # get payment method
+    pay_method = string_checker("Choose a payment method(cash / credit): ", 2, payment_list)
+
+
 
 
 
