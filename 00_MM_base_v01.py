@@ -60,7 +60,19 @@ def not_blank(question):
             return response
 
 
+# checks that users enter a valid response (eg yes / no, cash / credit based on  a list of options
+def string_checker(question, short_version, valid_response):
 
+    error = f"Please choose {valid_response[0]} or {valid_response[1]}"
+
+
+    while True:
+        response = input(question).lower()
+
+        for item in valid_response:
+            if response == item[:short_version] or response == item:
+                return item
+        print(error)
 
 
 
@@ -108,7 +120,10 @@ while tickets_sold < max_tickets:
 
     ticket_cost = calculate_ticket_price(age)
 
-    print(f"Age: {age}, Ticket Price: ${ticket_cost:.2f}.")
+    yes_no_list = ["yes", "no"]
+    payment_list = ["cash", "credit"]
+
+
 
     tickets_sold += 1
     print("Ticket Sold!")
